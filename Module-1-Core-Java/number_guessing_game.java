@@ -5,7 +5,7 @@ public class GuessingGame {
     public static void main(String[] args) {
         Random rand = new Random();
         Scanner sc = new Scanner(System.in);
-        int numberToGuess = rand.nextInt(100);
+        int numberToGuess = rand.nextInt(100) + 1;
         int guess;
         do {
             System.out.print("Guess the number (1 to 100): ");
