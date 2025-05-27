@@ -11,8 +11,7 @@ public class FileWriting {
             w.write(data);
             w.close();
             System.out.println("Data has been written to output.txt");
-        } 
-        catch (IOException e) {
+        }  catch (IOException e) {
             System.out.println("An error occurred.");
         }
     }
