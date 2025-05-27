@@ -1,0 +1,11 @@
+/*
+EXERCISE - 2
+TOP RATED EVENTS - 
+IDENTIFY EVENTS WITH THE HIGHEST AVERAGE RATING, CONSIDERING ONLY THOSE THAT HAVE RECEIVED AT LEAST 10 SUBMISSIONS
+*/
+
+SELECT e.title,AVG(f.rating) as avg_rating FROM Events e 
+JOIN Feedback f ON f.event_id = e.event_id
+GROUP BY e.event_id
+HAVING COUNT(f.feedback_id) >= 10 
+ORDER BY avg_rating DESC

@@ -1,0 +1,11 @@
+/*
+EXERCISE - 5
+MOST ACTIVE CITIES -
+LIST THE TOP 5 CITIES WITH THE HIGHEST NUMBER OF DISTINCT USER REGISTRATIONS
+*/
+
+SELECT u.city , COUNT(DISTINCT r.user_id) as user_count FROM Users u 
+JOIN Registrations r ON r.user_id = u.user_id
+GROUP BY u.city
+ORDER BY user_count DESC
+LIMIT 5

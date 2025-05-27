@@ -1,0 +1,9 @@
+/*
+EXERCISE - 11
+DAILY NEW USER COUNT - 
+FIND THE NUMBER OF NEW USERS WHO REGISTERED EACH DAY IN THE LAST 7 DAYS
+*/
+
+SELECT registration_date,COUNT(*) as user_count FROM Users
+WHERE registration_date >= CURDATE() - INTERVAL 7 DAY
+GROUP BY registration_date

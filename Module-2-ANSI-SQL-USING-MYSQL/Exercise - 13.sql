@@ -1,0 +1,9 @@
+/*
+EXERCISE - 13
+AVERAGE RATING PER CITY - 
+SHOW THE AVERAGE FEEDBACK RATING GROUPED BY THE CITY IN WHICH THE EVENTS WERE HELD.
+*/
+
+SELECT e.city, AVG(f.rating) as avg_rating FROM Events e
+JOIN Feedback f ON f.event_id = e.event_id
+GROUP BY e.city 
