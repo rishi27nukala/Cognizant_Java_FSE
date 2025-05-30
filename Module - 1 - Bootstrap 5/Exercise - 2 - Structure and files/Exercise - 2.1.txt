@@ -1,0 +1,5 @@
+CSS folder: Contains precompiled .css files like bootstrap.min.css.
+
+JS folder: Includes bootstrap.bundle.min.js (with Popper.js).
+
+Icons folder: Contains SVG icons (if downloaded).
