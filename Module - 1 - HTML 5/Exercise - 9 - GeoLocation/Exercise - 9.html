@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+</head>
+<body>
+    <button onclick="findLocation()">Find Nearby Events</button>
+    <p id="location"></p>
+</body>
+
+<script>
+  function findLocation() {
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        document.getElementById('location').textContent = 
+          `Latitude: ${pos.coords.latitude}, Longitude: ${pos.coords.longitude}`;
+      },
+      err => {
+        document.getElementById('location').textContent = `Error: ${err.message}`;
+      },
+      { enableHighAccuracy: true, timeout: 5000 }
+    );
+  }
+</script>
+
+</html>

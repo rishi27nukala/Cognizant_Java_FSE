@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+</head>
+<body>
+    <form>
+    <input type="text" id="phone" placeholder="Phone" onblur="validatePhone()"><br>
+    <select onchange="showFee(this)">
+        <option value="">Choose</option>
+        <option value="Free">Free</option>
+        <option value="10">$10</option>
+    </select>
+    <p id="fee"></p>
+    <button onclick="alert('Thank you!')">Submit</button><br>
+    <img src="event.jpg" ondblclick="this.style.width='300px';">
+    <br>
+    <textarea onkeyup="countChars(this)"></textarea>
+    <p id="charCount">Characters: 0</p>
+    </form>
+</body>
+<script>
+  function validatePhone() {
+    let phone = document.getElementById('phone').value;
+    if (!/^\d{10}$/.test(phone)) alert('Invalid phone number!');
+  }
+
+  function showFee(select) {
+    document.getElementById('fee').textContent = "Fee: " + select.value;
+  }
+
+  function countChars(textarea) {
+    document.getElementById('charCount').textContent = "Characters: " + textarea.value.length;
+  }
+</script>
+</html>
